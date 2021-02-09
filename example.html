@@ -74,7 +74,7 @@
       }
     }
     const query = new URLSearchParams(params).toString();
-    const src = 'dist/index.html?' + query;
+    const src = 'https://vorjyga.github.io/widget-test/dist/index.html?' + query;
     const width = event.currentTarget.querySelector('#width').value || 1024;
 
     const container = document.getElementById('container');
@@ -82,9 +82,10 @@
     const string = `<iframe width="${width}" height="300" frameborder="0" src="${src}"></iframe>`;
     container.insertAdjacentHTML("beforeend", `
        <div>
-            Для встраивания на свой сайт используйте следующий код:
+            <span>Для встраивания на свой сайт используйте следующий код:</span>
+            <code id="codeContainer"></code>
         </div>
-        <code id="codeContainer"></code>
+
     `);
     container.querySelector('#codeContainer').innerText = string;
 
