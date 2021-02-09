@@ -1,0 +1,198 @@
+.widget {
+  &-main {
+    font-family: sans-serif;
+    max-width: 1024px;
+    padding: 5px 20px 15px 20px;
+    background-color: #498fe1;
+    box-sizing: border-box;
+  }
+  &-title {
+    color: white;
+    font-weight: bold;
+  }
+  &-text {
+    color: white;
+    letter-spacing: 0.5px;
+  }
+  &-button {
+    background-color: #f5a523;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    font-size: 20px;
+    color: white;
+
+  }
+  &-input-wrapper {
+    width: 100%;
+    position: relative;
+  }
+  &-input {
+    background-color: white;
+    padding: 10px 13px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer ;
+    box-sizing: border-box;
+  }
+  &-calendar-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .widget {
+    &-main {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+    &-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    &-body {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+    &-text {
+      font-size: 10px;
+      flex: 0 0 26%;
+      box-sizing: border-box;
+    }
+    &-form {
+      display: inline-flex;
+      flex-flow: row nowrap;
+      flex: 0 0 69%;
+      justify-content: space-between;
+    }
+    &-inputs {
+      display: flex;
+      flex: 1 1 100%;
+    }
+    &-input-wrapper {
+      margin-right: 20px;
+    }
+    &-button {
+      flex: 1 1 57%;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .widget {
+    &-main {
+      width: 768px;
+    }
+    &-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    &-body {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+
+    }
+    &-text {
+      font-size: 10px;
+      flex: 0 0 26%;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+    &-form {
+      display: inline-flex;
+      flex-flow: row nowrap;
+      flex: 0 0 69%;
+      justify-content: space-between;
+    }
+    &-inputs {
+      display: flex;
+      flex: 1 0 65%;
+      justify-content: space-between;
+    }
+    &-input-wrapper {
+      margin-right: 20px;
+    }
+    &-button {
+      flex: 0 1 35%;
+    }
+  }
+}
+
+@media (min-width: 440px) and (max-width: 767px) {
+  .widget {
+    &-main {
+      width: 440px;
+    }
+    &-title {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    &-body {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+
+    }
+    &-text {
+      font-size: 10px;
+      flex: 0 0 26%;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+    &-form {
+      display: inline-flex;
+      flex-flow: column nowrap;
+      flex: 0 0 69%;
+      justify-content: space-between;
+    }
+    &-inputs {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 20px;
+    }
+  }
+  .depart-date {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 199px) and (max-width: 439px) {
+  .widget {
+    &-main {
+      width: 285px;
+    }
+    &-title {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    &-body {
+      display: flex;
+      flex-flow: column-reverse nowrap;
+    }
+    &-text {
+      font-size: 10px;
+    }
+    &-form {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+    &-inputs {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+    &-input {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    &-button {
+      margin-bottom: 20px;
+    }
+  }
+}

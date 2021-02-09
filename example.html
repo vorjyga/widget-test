@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <title >Title</title >
+</head >
+<body >
+<iframe
+    src="dist/index.html"
+    frameborder="0"
+    width="1200"
+    height="150"
+></iframe >
+<div >
+    <h1 >Form for testing</h1 >
+    <form
+        id="form"
+        style="display: flex"
+    >
+        <div style="display: flex; flex-flow: column; margin-right: 10px;">
+            <label for="title">Custom title:</label >
+            <textarea
+                name="title"
+                id="title"
+                cols="30"
+                rows="10"
+            ></textarea >
+        </div >
+        <div style="display: flex; flex-flow: column; margin-right: 10px;">
+            <label for="text">Custom text:</label >
+            <textarea
+                name="text"
+                id="text"
+                cols="30"
+                rows="10"
+            ></textarea >
+        </div >
+        <div style="display: flex; flex-flow: column; margin-right: 10px;">
+            <label for="btn">button color</label >
+            <input
+                type="color"
+                id="btn"
+            >
+        </div >
+        <div style="display: flex; flex-flow: column; margin-right: 10px;">
+            <div style="display: flex; flex-flow: column;margin-bottom: 10px">
+                <label for="background">background color</label >
+                <input
+                    type="color"
+                    id="background"
+                >
+            </div >
+            <div style="display: flex; flex-flow: column">
+                <label for="width">width</label >
+                <input
+                    type="number"
+                    id="width"
+                >
+            </div >
+        </div >
+        <button >Yahoo!</button >
+    </form >
+</div >
+<div id="container"></div >
+
+<script >
+  const form = document.getElementById('form');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let params = {};
+    for (let i = 0; i < 4; i++) {
+      if (event.currentTarget[i].value && event.currentTarget[i].id !== 'width') {
+        params[event.currentTarget[i].id] = event.currentTarget[i].value;
+      }
+    }
+    const query = new URLSearchParams(params).toString();
+    const src = 'dist/index.html?' + query;
+    const width = event.currentTarget.querySelector('#width').value || 1024;
+
+    const container = document.getElementById('container');
+    container.innerHTML = '';
+    const string = `<iframe width="${width}" height="300" frameborder="0" src="${src}"></iframe>`;
+    container.insertAdjacentHTML("beforeend", `
+       <div>
+            Для встраивания на свой сайт используйте следующий код:
+        </div>
+        <code id="codeContainer"></code>
+    `);
+    container.querySelector('#codeContainer').innerText = string;
+
+    container.insertAdjacentHTML("beforeend", `
+        <iframe width="${width}" height="300" frameborder="0" src="${src}"></iframe>
+    `)
+  })
+</script >
+</body >
+</html >
